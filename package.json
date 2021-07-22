@@ -17,9 +17,9 @@
     "tape": "^5.2.2"
   },
   "scripts": {
-    "build": "npm run build:countries && npm run build:currencies",
-    "build:countries": "./bin/fill-currencies.js > tmp/iso-4217.json && mv tmp/iso-4217.json data/iso-4217.json",
-    "build:currencies": " ./bin/fill-countries.js > tmp/iso-3166-1-alpha-2-to-iso-4217.json && mv tmp/iso-3166-1-alpha-2-to-iso-4217.json data/iso-3166-1-alpha-2-to-iso-4217.json",
+    "fill": "npm run fill:countries && npm run fill:currencies",
+    "fill:countries": "node bin/fill-currencies.js > tmp/iso-4217.json && mv tmp/iso-4217.json data/iso-4217.json",
+    "fill:currencies": "node bin/fill-countries.js > tmp/iso-3166-1-alpha-2-to-iso-4217.json && mv tmp/iso-3166-1-alpha-2-to-iso-4217.json data/iso-3166-1-alpha-2-to-iso-4217.json",
     "release": "release-it",
     "test": "./node_modules/.bin/tape test/*.js | node_modules/.bin/tap-spec"
   },
