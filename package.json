@@ -1,0 +1,48 @@
+{
+  "name": "iso-4217-currencies",
+  "description": "Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal rounding",
+  "version": "0.1.0",
+  "main": "index.js",
+  "bin": {
+    "iso-4217-currencies": "fill-countries.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "release-it": "^14.10.0",
+    "tap-prettify": "^0.0.2",
+    "tap-spec": "^2.2.2",
+    "tape": "^5.2.2"
+  },
+  "scripts": {
+    "build": "npm run build:countries && npm run build:currencies",
+    "build:countries": "./bin/fill-currencies.js > tmp/iso-4217.json && mv tmp/iso-4217.json data/iso-4217.json",
+    "build:currencies": " ./bin/fill-countries.js > tmp/iso-3166-1-alpha-2-to-iso-4217.json && mv tmp/iso-3166-1-alpha-2-to-iso-4217.json data/iso-3166-1-alpha-2-to-iso-4217.json",
+    "release": "release-it",
+    "test": "./node_modules/.bin/tape test/*.js | node_modules/.bin/tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blossomfinance/iso-4217-currencies.git"
+  },
+  "keywords": [
+    "currency",
+    "country",
+    "iso-4217",
+    "iso-3166",
+    "iso-3166-1",
+    "alpha",
+    "2",
+    "metadata",
+    "lookup",
+    "fx"
+  ],
+  "author": "Matthew J. Martin <matthew@blossomfinance.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blossomfinance/iso-4217-currencies/issues"
+  },
+  "homepage": "https://github.com/blossomfinance/iso-4217-currencies#readme"
+}

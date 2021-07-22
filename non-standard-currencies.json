@@ -1,0 +1,38 @@
+{
+  "BTC": {
+    "symbol": "BTC",
+    "name": "Bitcoin",
+    "symbolNative": "Ƀ",
+    "decimalDigits": 5,
+    "rounding": 0,
+    "code": "BTC",
+    "namePlural": "Bitcoin"
+  },
+  "ETH": {
+    "symbol": "ETH",
+    "name": "Ethereum",
+    "symbolNative": "Ξ",
+    "decimalDigits": 5,
+    "rounding": 0,
+    "code": "ETH",
+    "namePlural": "Ether"
+  },
+  "USDC": {
+    "symbol": "USDC",
+    "name": "USD Coin",
+    "symbolNative": "USDC",
+    "decimalDigits": 2,
+    "rounding": 0,
+    "code": "USDC",
+    "namePlural": "USDC"
+  },
+  "USDT": {
+    "symbol": "USDT",
+    "name": "Tether",
+    "symbolNative": "USDT",
+    "decimalDigits": 2,
+    "rounding": 0,
+    "code": "USDT",
+    "namePlural": "USDT"
+  }
+}
