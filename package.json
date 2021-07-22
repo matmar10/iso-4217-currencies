@@ -3,9 +3,6 @@
   "description": "Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal rounding",
   "version": "0.2.3",
   "main": "index.js",
-  "bin": {
-    "iso-4217-currencies": "fill-countries.js"
-  },
   "directories": {
     "test": "test"
   },
@@ -17,9 +14,9 @@
     "tape": "^5.2.2"
   },
   "scripts": {
-    "fill": "npm run fill:countries && npm run fill:currencies",
-    "fill:countries": "node bin/fill-currencies.js > tmp/iso-4217.json && mv tmp/iso-4217.json data/iso-4217.json",
-    "fill:currencies": "node bin/fill-countries.js > tmp/iso-3166-1-alpha-2-to-iso-4217.json && mv tmp/iso-3166-1-alpha-2-to-iso-4217.json data/iso-3166-1-alpha-2-to-iso-4217.json",
+    "build": "npm run fill:countries && npm run fill:currencies",
+    "build:countries": "node bin/fill-currencies.js > tmp/iso-4217.json && mv tmp/iso-4217.json data/iso-4217.json",
+    "build:currencies": "node bin/fill-countries.js > tmp/iso-3166-1-alpha-2-to-iso-4217.json && mv tmp/iso-3166-1-alpha-2-to-iso-4217.json data/iso-3166-1-alpha-2-to-iso-4217.json",
     "release": "release-it",
     "test": "./node_modules/.bin/tape test/*.js | node_modules/.bin/tap-spec"
   },
