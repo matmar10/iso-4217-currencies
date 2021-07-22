@@ -1,5 +1,5 @@
 {
-  "name": "iso-4217-currencies",
+  "name": "@blossomfinance/iso-4217-currencies",
   "description": "Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal rounding",
   "version": "0.1.0",
   "main": "index.js",
