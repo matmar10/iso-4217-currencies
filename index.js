@@ -1,7 +1,7 @@
 'use strict';
 
-const map = require('./data/iso-4217');
-const countryCurrencies = require('./data/iso-3166-1-alpha-2-to-iso-4217');
+const map = require('./data/iso-4217.json');
+const countryCurrencies = require('./data/iso-3166-1-alpha-2-to-iso-4217.json');
 
 const codes = Object.keys(map);
 const currencies = codes.map(code => map[code]);
