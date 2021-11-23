@@ -40,10 +40,11 @@ const code = lib.codeForCountry('CM');
 ```
 
 ## Exported API
+
 ```JavaScript
 const lib = require('@blossomfinance/iso-4217-currencies');
 
-const {  
+const {
   // array of currency codes
   // ['AED', 'AFN', ...]
   codes,
