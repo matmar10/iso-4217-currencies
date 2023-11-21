@@ -1,7 +1,7 @@
 {
-  "name": "@blossomfinance/iso-4217-currencies",
+  "name": "@mreduar/iso-4217-currencies",
   "description": "Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal rounding",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -18,11 +18,11 @@
     "build:countries": "node bin/fill-currencies.js > tmp/iso-4217.json && mv tmp/iso-4217.json data/iso-4217.json",
     "build:currencies": "node bin/fill-countries.js > tmp/iso-3166-1-alpha-2-to-iso-4217.json && mv tmp/iso-3166-1-alpha-2-to-iso-4217.json data/iso-3166-1-alpha-2-to-iso-4217.json",
     "release": "release-it",
-    "test": "./node_modules/.bin/tape test/*.js | node_modules/.bin/tap-spec"
+    "test": "tape test/*.js | node_modules/.bin/tap-spec"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blossomfinance/iso-4217-currencies.git"
+    "url": "git+https://github.com/mreduar/iso-4217-currencies.git"
   },
   "keywords": [
     "currency",
@@ -39,7 +39,7 @@
   "author": "Matthew J. Martin <matthew@blossomfinance.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blossomfinance/iso-4217-currencies/issues"
+    "url": "https://github.com/mreduar/iso-4217-currencies/issues"
   },
-  "homepage": "https://github.com/blossomfinance/iso-4217-currencies#readme"
+  "homepage": "https://github.com/mreduar/iso-4217-currencies#readme"
 }

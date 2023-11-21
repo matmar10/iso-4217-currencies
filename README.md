@@ -8,7 +8,7 @@ Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal roun
 ```JavaScript
 
 // include it
-const lib = require('@blossomfinance/iso-4217-currencies');
+const lib = require('@mreduar/iso-4217-currencies');
 
 // get metadata for a specific currency code
 const usd = lib.currency('USD');
@@ -42,7 +42,7 @@ const code = lib.codeForCountry('CM');
 ## Exported API
 
 ```JavaScript
-const lib = require('@blossomfinance/iso-4217-currencies');
+const lib = require('@mreduar/iso-4217-currencies');
 
 const {
   // array of currency codes
