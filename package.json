@@ -1,5 +1,5 @@
 {
-  "name": "@blossomfinance/iso-4217-currencies",
+  "name": "list-iso-4217-currencies",
   "description": "Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal rounding",
   "version": "0.2.5",
   "main": "index.js",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blossomfinance/iso-4217-currencies.git"
+    "url": "git+https://github.com/matmar10/iso-4217-currencies.git"
   },
   "keywords": [
     "currency",
@@ -36,10 +36,10 @@
     "lookup",
     "fx"
   ],
-  "author": "Matthew J. Martin <matthew@blossomfinance.com>",
+  "author": "Matthew J. Martin <matthew.mar10@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/blossomfinance/iso-4217-currencies/issues"
+    "url": "https://github.com/matmar10/iso-4217-currencies/issues"
   },
-  "homepage": "https://github.com/blossomfinance/iso-4217-currencies#readme"
+  "homepage": "https://github.com/matmar10/iso-4217-currencies#readme"
 }
