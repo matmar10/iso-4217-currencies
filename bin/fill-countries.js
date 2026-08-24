@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 'use strict';
 
-const faker = require('faker');
-const lib = require('./../');
+import { LocationDefinition } from '@faker-js/faker';
+import { codeForCountry } from './../index.js';
 
 const newCountryCurrencies = {};
-faker.definitions.address.country_code
+LocationDefinition.country_code
+  .map((country) => country.alpha_2)
   .sort()
-  .forEach(country => newCountryCurrencies[country] = lib.codeForCountry(country));
+  .forEach(country => newCountryCurrencies[country] = codeForCountry(country));
 
 console.log(JSON.stringify(newCountryCurrencies, null, 2));

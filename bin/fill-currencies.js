@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 'use strict';
 
-const faker = require('faker');
+import { FinanceModule } from '@faker-js/faker';
+import { CurrencyNotFoundError, currency } from './../index.js';
+import iso4217Currencies from './../data/iso-4217.json' assert { type: 'json' };
 
-const lib = require('./../');
-const iso4217Currencies = require('./../data/iso-4217.json');
-
-const { CurrencyNotFoundError, currency } = lib;
-
-const fakerCurrencyMapByName = faker.definitions.finance.currency;
+const fakerCurrencyMapByName = FinanceModule.currency;
 const fakerCurrencyNames = Object.keys(fakerCurrencyMapByName);
 const fakerCountryMapByCode = {};
 const fakerCurrencyCodes = fakerCurrencyNames.map(name => {

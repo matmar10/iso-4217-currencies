@@ -1,12 +1,12 @@
 'use strict';
 
-const map = require('./data/iso-4217.json');
-const countryCurrencies = require('./data/iso-3166-1-alpha-2-to-iso-4217.json');
+import map from './data/iso-4217.json' assert { type: 'json' };
+import countryCurrencies from './data/iso-3166-1-alpha-2-to-iso-4217.json' assert { type: 'json' };
 
-const codes = Object.keys(map);
-const currencies = codes.map(code => map[code]);
+export const codes = Object.keys(map);
+export const currencies = codes.map(code => map[code]);
 
-class CurrencyNotFoundError extends Error {
+export class CurrencyNotFoundError extends Error {
   constructor(currencyCode) {
     const message = currencyCode ?
       `currency '${currencyCode}' not found` :
@@ -17,7 +17,7 @@ class CurrencyNotFoundError extends Error {
   }
 }
 
-class CountryCurrencyNotFoundError extends Error {
+export class CountryCurrencyNotFoundError extends Error {
   constructor(country) {
     country = country || '';
     const message = `currency for country '${country}' not found`;
@@ -26,34 +26,41 @@ class CountryCurrencyNotFoundError extends Error {
     this.country = country;
   }
 }
+export function guessCodeForCountry(countryCode) {
+  const code = codes.find(code => 0 === code.indexOf(countryCode));
+  if (!code) {
+    throw new CountryCurrencyNotFoundError(countryCode);
+  }
+  return code;
+}
 
-const lib = {
+export function codeForCountry(countryCode) {
+  const currencyCode = countryCurrencies[countryCode];
+  return currencyCode ? currencyCode : lib.guessCodeForCountry(countryCode);
+}
+
+export function country(countryCode) {
+  return lib.currency(lib.codeForCountry(countryCode));
+}
+
+export function currency(currency) {
+  const meta = map[currency];
+  if (!meta) {
+    throw new CurrencyNotFoundError(currency);
+  }
+  return meta;
+}
+
+export const lib = {
   CountryCurrencyNotFoundError,
   CurrencyNotFoundError,
   codes,
   currencies,
   map,
-  guessCodeForCountry: function (countryCode) {
-    const code = codes.find(code => 0 === code.indexOf(countryCode));
-    if (!code) {
-      throw new CountryCurrencyNotFoundError(countryCode);
-    }
-    return code;
-  },
-  codeForCountry: function(countryCode) {
-    const currencyCode = countryCurrencies[countryCode];
-    return currencyCode ? currencyCode : lib.guessCodeForCountry(countryCode);
-  },
-  country: function(countryCode) {
-    return lib.currency(lib.codeForCountry(countryCode));
-  },
-  currency: function(currency) {
-    const meta = map[currency];
-    if (!meta) {
-      throw new CurrencyNotFoundError(currency);
-    }
-    return meta;
-  },
+  guessCodeForCountry,
+  codeForCountry,
+  country,
+  currency,
 };
 
-module.exports = lib;
+export default lib;

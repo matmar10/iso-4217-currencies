@@ -3,11 +3,12 @@
   "description": "Simply a list of ISO-4217 currencies with name, code, symbol, &amp; decimal rounding",
   "version": "0.2.6",
   "main": "index.js",
+  "type": "module",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
-    "faker": "^5.5.3",
+    "@faker-js/faker": "^8.3.1",
     "release-it": "^14.10.0",
     "tap-prettify": "^0.0.2",
     "tap-spec": "^2.2.2",
